@@ -1,0 +1,7 @@
+.PHONY: run start
+
+run:
+	docker run --name ide -it -v $(PWD):/home/ide/repo bryt/ide
+
+start:
+	docker start -ai ide

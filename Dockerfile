@@ -71,6 +71,7 @@ ADD .tmux.conf /home/$USER_NAME
 ADD .zshrc /home/$USER_NAME
 RUN cd /home/$USER_NAME && sudo chown -R $USER_NAME:$USER_NAME .emacs .emacs.d .tmux.conf .zshrc
 
-WORKDIR /home/$USER_NAME
+RUN mkdir /home/$USER_NAME/repo
+WORKDIR /home/$USER_NAME/repo
 
 CMD ["zsh"]
